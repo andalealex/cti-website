@@ -67,7 +67,6 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 </style>
 </head>
 <body>
@@ -97,49 +96,8 @@ body {
 
 </div>
 
-<div class="main">
-  <h2>Background of Industry</h2>
-  <p>The Aerospace Defense Industry is a large portion of the private side of the defense industrial base for the United States. This industry has an annualized revenue of $169.4BN and a profit of $9BN per year. The industry has been on decline at 5.8% over the past five years, and is expected to rise at an annualized rate of 9% over the next five years.</p>
-  <p>The Department of Defense relies heavily on the A&D industry to provide them with the most technologically advanced and capable equipment on and off the battlefield. Without the robust A&D industry, the US DoD would not have the capability to maintain the global presence that it does.</p>
-
-<h3>Key Services & Products</h3>
-  <ul>
-    <li>Flight vehicles</li>
-    <li>Design</li>
-    <li>Prototyping</li>
-    <li>Modeling</li>
-    <li>Repair & Maintenance Services</li>
-    <li>Research & Development Services</li>
-  </ul>
-
-<h3>Key Players</h3>
-  <ul>
-    <li>Boeing</li>
-    <li>Lockheed Martin</li>
-    <li>Northrop Grumman</li>
-    <li>Deloitte</li>
-    <li>Raytheon</li>
-  </ul>
-
-</div>
-
-<script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
-  });
-}
-</script>
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
 
 </body>
-</html> 
+</html>
