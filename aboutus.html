@@ -67,11 +67,62 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .title {
+    color: grey;
+  }
+
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .button:hover {
+    background-color: #555;
+  }
 
 </style>
 </head>
@@ -102,12 +153,35 @@ body {
 </div>
 
 <div class="main">
-  <h2>About the Group Members</h2>
-  <p>The purpose of this website is to track the progress of the CTI group project.</p>
-      <h3>Chad Hellan</h3>
-        <p>Chad is a Masters student studying Cybersecurity and is currently employed by the US Marine Corps.</p> 
-      <b> Team Role:</b> Threat Modeler
-      <p><b><i>Milestone 1 Responsibilties:</i></b></p>
+  <h2>About Us</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Alexandra Gomez</h2>
+        <p class="title">Web Developer, Team Coordinator</p>
+        <p>Alexandra is a Masters student studying Cybersecurity and is currently employed by Cisco.</p>
+        <p><button class="button">Milestone 1 Responsibilities</button></p>
+        <p><b><i>Milestone 1 Responsibilties:</i></b></p>
+       <ul> 
+        <li>Industry Background: Key Players, Products & Services</li>
+        <li>Developed 5 Diamond Models</li>
+        <li>Intelligence Buy-In Slides</li>
+        <li>References</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Chad Hellan</h2>
+        <p class="title">Threat Modeler</p>
+        <p>Chad is a Masters student studying Cybersecurity and is currently employed by the US Marine Corps.</p>
+        <p><button class="button">Milestone 1 Responsibilties:</button></p>
+        <p><b><i>Milestone 1 Responsibilties:</i></b></p>
       <ul> 
         <li>Introduction & Industry Background</li>
         <li>Relevant Threat Trends</li>
@@ -115,20 +189,10 @@ body {
         <li>Developed 5 Diamond Models</li>
         <li>References</li> 
       </ul>
-    <p>
-    <p>
-      <h3>Alexandra Gomez</h3>
-        <p>Alexandra is a Masters student studying Cybersecurity and is currently employed by Cisco Systems.</p>
-      <b> Team Role:</b> Team Coordinator, Website Developer
-      <p><b><i>Milestone 1 Responsibilties:</i></b></p>
-       <ul> 
-        <li>Industry Background: Key Players, Products & Services</li>
-        <li>Developed 5 Diamond Models</li>
-        <li>Intelligence Buy-In Slides</li>
-        <li>References</li>
-      </ul>
+      </div>
+    </div>
+  </div>
 </div>
-
 
 <script>
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
