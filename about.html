@@ -4,6 +4,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 body 
   {background-color: lightgrey;}
 h1 
@@ -11,6 +14,7 @@ h1
 body 
   {font-family: sans-serif;}
 
+/* CSS for header */
 ul {
   list-style-type: none;
   margin: 0;
@@ -18,11 +22,9 @@ ul {
   overflow: hidden;
   background-color: #333;
 }
-
 li {
   float: left;
 }
-
 li a {
   display: block;
   color: white;
@@ -30,24 +32,18 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
 li a:hover {
   background-color: #111;
 }
-
 * {
   box-sizing: border-box;
 }
-
-/* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 300px;
 }
-
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -55,9 +51,13 @@ li a:hover {
 }
 
 footer {
-  padding: 10 px;
-  text-align: center;
-  color: darkred;
+  position:  fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align:  center;
 }
 </style>
 </head>
@@ -74,22 +74,37 @@ footer {
     </ul>
   </nav>
 
-<h2>Group Members</h2>
+<h2>About Group Members</h2>
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Alexandra Gomez</h2>
-      <p>Contributions & Responsibilities:</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
+  <div class="column">
+      <h3>Chad Hellan</h3>
+      <h4> Group Member Info: </h4>
+        <p>Chad is a Masters student studying Cybersecurity and is currently employed by the US Marine Corps.</p> 
+        <p>Hometown: Phoenix, AZ</p>
+      <b> Team Role:</b> Threat Modeler
+      <h4>Milestone 1 Responsibilties:</h4>
+        <p>- Introduction & Industry Background</p>
+        <p>- Relevant Threat Trends</p>
+        <p>- Critical Assets</p>
+        <p>- Developed 5 Diamond Models</p>
+        <p>- References</p> 
+
   </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>Chad Hellan</h2>
-      <p>Contributions & Responsibilities:</p>
-      <p>Item 1</p>
-      <p>Item 2</p>
-  </div>
+
+<div class="column">
+      <h3>Alexandra Gomez</h3>
+      <h4> Group Member Info: </h4>
+        <p>Alexandra is a Masters student studying Cybersecurity and is currently employed by Cisco Systems.</p> 
+        <p>Hometown: Nogales, AZ</p>
+      <b> Team Role:</b> Team Coordinator, Website Developer
+      <h4>Milestone 1 Responsibilties:</h4>
+        <p>- Industry Background: Key Players, Products & Services</p>
+        <p>- Developed 5 Diamond Models</p>
+        <p>- Intelligence Buy-In Slides</p>
+        <p>- References</p>
 </div>
+
+
 
 <footer>
   <p>Disclaimer: All content on this site is for educational purposes only.</p>
