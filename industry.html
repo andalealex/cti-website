@@ -1,83 +1,146 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body 
-  {background-color: lightgrey;}
-h1 
-  {color: black;}
-body 
-  {font-family: sans-serif;}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+body {
+  font-family: "Lato", sans-serif;
 }
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-hr.solid {
-  border-top: 3px solid #bbb;
-}
-section::after{
-  content: "";
-  display: table;
-  clear: both;
-}
-footer {
-  position:  fixed;
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align:  center;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
-</style>
 
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
 </head>
-<title> MIS 562 </title>
 <body>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="industry.html">Industry Background</a></li>
-      <li><a href="threat.html">Threat Modelling</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </nav>
+<div class="sidenav">
+  <a href="home.html">Home</a>
+  <button class="dropdown-btn">Industry Background
+    <i class="fa fa-caret-down"></i>
+  </button>
+    <div class="dropdown-container">
+      <a href="industry.html">Background of Industry</a>
+      <a href="trends.html">Threat Trends</a>
+    </div>
+  <button class="dropdown-btn">Threat Modeling 
+    <i class="fa fa-caret-down"></i>
+  </button>
+    <div class="dropdown-container">
+      <a href="asset.html">Critical Asset Identification</a>
+      <a href="diamond.html">Diamond Models</a>
+      <a href="buyin.html">Intelligence Buy-In</a>
+    </div>
+  <a href="about.html">About Us</a>
+</div>
 
- <h1> Industry Background </h1>
- <hr class="solid">
+/* Home Page Details */
+<div class="main">
+  <h2>Background of Industry</h2>
+  <p>The Aerospace Defense Industry is a large portion of the private side of the defense industrial base for the United States. This industry has an annualized revenue of $169.4BN and a profit of $9BN per year. The industry has been on decline at 5.8% over the past five years, and is expected to rise at an annualized rate of 9% over the next five years.</p>
+  <p>The Department of Defense relies heavily on the A&D industry to provide them with the most technologically advanced and capable equipment on and off the battlefield. Without the robust A&D industry, the US DoD would not have the capability to maintain the global presence that it does.</p>
 
-    	<h1>Background of Industry</h1>
-    		<p>Description of the industry.</p>
-    	<h1>Threat Trends</h1>
-    		<p>Examples of the threat trends.</p>
-</section>
+<h3>Key Services & Products</h3>
+  <ul>
+    <li>Flight vehicles</li>
+    <li>Design</li>
+    <li>Prototyping</li>
+    <li>Modeling</li>
+    <li>Repair & Maintenance Services</li>
+    <li>Research & Development Services</li>
+  </ul>
 
-<footer>
-  <p>Disclaimer: All content on this site is for educational purposes only.</p>
-</footer>
+<h3>Key Players</h3>
+  <ul>
+    <li>Boeing</li>
+    <li>Lockheed Martin</li>
+    <li>Northrop Grumman</li>
+    <li>Deloitte</li>
+    <li>Raytheon</li>
+  </ul>
+
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
 
 </body>
-</html>
+</html> 
