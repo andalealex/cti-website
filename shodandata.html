@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Threat Modeling 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="asset.html">Critical Asset Management</a>
+      <a href="diamond.html">Diamond Modeling</a>
+      <a href="buyin.html">Intelligence Buy-In</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Industry Background 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="industry.html">Background of Industry</a>
+      <a href="trends.html">Threat Trends</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Data
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Shodan.html">Shodan Overview</a>
+      <a href="shodandata.html">Shodan Data</a>
+      <a href="WiGLE.html">WiGLE Overview</a>
+      <a href="wigledata.html">WiGLE Data</a>
+    </div>
+  </div> 
+  <a href="aboutus.html">About</a>
+</div>
+
+
+<h2>Shodan Facet Analysis</h2>
+
+<h3>Boeing</h3>
+<table>
+	<tr> 
+		<td><b> Type</b></td>
+		<td><b>#</b></td>
+	</tr>	<tr> 
+		<td> Choices</td>
+		<td>31</td>
+	</tr>
+	<tr> 
+		<td> Pulse Secure</td>
+		<td>31</td>
+	</tr>
+	<tr> 
+		<td> Bootstrap</td>
+		<td>29</td>
+	</tr>
+	<tr> 
+		<td> jQuery</td>
+		<td>19</td>
+	</tr>
+	<tr> 
+		<td> jQuery UI</td>
+		<td>14</td>
+	</tr>
+	<tr> 
+		<td> Modernizr</td>
+		<td>9</td>
+	</tr>
+	<tr> 
+		<td> AddThis</td>
+		<td>7</td>
+	</tr>
+	<tr> 
+		<td> SWFObject</td>
+		<td>7</td>
+	</tr>
+	<tr> 
+		<td> Google Font API</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Hammer.js</td>
+		<td>2</td>
+	</tr>	
+	<tr> 
+		<td> Slick</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> jQuery Migrate</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Cufon</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> RequireJS</td>
+		<td>1</td>
+	</tr>
+</table>
+
+
+<h3>Raytheon</h3>
+<table>
+	<tr> 
+		<td> Choices</td>
+		<td>8</td>
+	</tr>
+	<tr> 
+		<td> Pulse Secure</td>
+		<td>8</td>
+	</tr>
+	<tr> 
+		<td> Google Tag Manager</td>
+		<td>5</td>
+	</tr>
+	<tr> 
+		<td> Microsoft ASP.Net</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> OWL Carousel</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> jQuery</td>
+		<td>1</td>
+	</tr>
+</table>
+
+
+<h3> Deloitte </h3>
+<table>
+	<tr> 
+		<td> jQuery</td>
+		<td>107</td>
+	</tr>
+	<tr> 
+		<td> Microsoft ASP.NET</td>
+		<td>56</td>
+	</tr>
+	<tr> 
+		<td> Bootstrap</td>
+		<td>54</td>
+	</tr>
+	<tr> 
+		<td> jQuery UI</td>
+		<td>43</td>
+	</tr>
+	<tr> 
+		<td> Font Awesome</td>
+		<td>38</td>
+	</tr>
+	<tr> 
+		<td> RequireJS</td>
+		<td>38</td>
+	</tr>
+	<tr> 
+		<td> AngularJS</td>
+		<td>25</td>
+	</tr>
+	<tr> 
+		<td> DataTables</td>
+		<td>22</td>
+	</tr>
+	<tr> 
+		<td> Google Font API</td>
+		<td>22</td>
+	</tr>
+	<tr> 
+		<td> D3</td>
+		<td>21</td>
+	</tr>
+	<tr> 
+		<td> JavaScript Infovis Toolkit</td>
+		<td>21</td>
+	</tr>
+	<tr> 
+		<td> Microsoft SharePoint</td>
+		<td>17</td>
+	</tr>
+	<tr> 
+		<td> Modernizr </td>
+		<td>15</td>
+	</tr>
+	<tr> 
+		<td> jQuery Migrate</td>
+		<td>13</td>
+	</tr>
+	<tr> 
+		<td> Hammer.js</td>
+		<td>13</td>
+	</tr>
+	<tr> 
+		<td> Slick</td>
+		<td>13</td>
+	</tr>
+	<tr> 
+		<td> Underscore.js</td>
+		<td>13</td>
+	</tr>
+	<tr> 
+		<td> Outlook Web App</td>
+		<td>9</td>
+	</tr>
+	<tr> 
+		<td> ExtJS</td>
+		<td>8</td>
+	</tr>
+	<tr> 
+		<td> Firebase</td>
+		<td>8</td>
+	</tr>	
+	<tr> 
+		<td> Google Tag Manager</td>
+		<td>6</td>
+	</tr>
+	<tr> 
+		<td> ZURB Foundation</td>
+		<td>6</td>
+	</tr>
+	<tr> 
+		<td> Java</td>
+		<td>5</td>
+	</tr>
+	<tr> 
+		<td> Google Analytics</td>
+		<td>4</td>
+	</tr>
+	<tr> 
+		<td> Moment.js</td>
+		<td>4</td>
+	</tr>	
+	<tr> 
+		<td> Atlassian Jira</td>
+		<td>3</td>
+	</tr>
+	<tr> 
+		<td> YouTube</td>
+		<td>3</td>
+	</tr>
+	<tr> 
+		<td> AppNexus</td>
+		<td>2</td>
+	</tr>	
+	<tr> 
+		<td> Bugzilla</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> FlexSlider</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Lightbox</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Okta</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Perl</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Prototype</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Ruby</td>
+		<td>2</td>
+	</tr>
+	<tr> 
+		<td> Ruby on Rails</td>
+		<td>2</td>
+	</tr>						
+	<tr> 
+		<td> 1C-Bitrix</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Atlassian Confluence</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Backbone.js</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Gitlab</td>
+		<td>1</td>
+	</tr>	
+	<tr> 
+		<td> Google Maps</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Lodash</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> OWL Carousel</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> OneTrust</td>
+		<td>1</td>
+	</tr>	
+	<tr> 
+		<td> PHP</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> SAP Commerce Cloud</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Select2</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> Vue.js</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> animate.css</td>
+		<td>1</td>
+	</tr>
+	<tr> 
+		<td> prettyPhoto</td>
+		<td>1</td>
+	</tr>
+</table>
