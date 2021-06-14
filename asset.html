@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>MIS 562 CTI Project</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -69,10 +67,33 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
-
 
 <div class="navbar">
   <a href="home.html">Home</a>
@@ -108,39 +129,92 @@ body {
   </div> 
   <a href="aboutus.html">About</a>
 </div>
+<h2> Critical Assets </h2> 
+<p> Critical assets are any data or systems that cause major impact to an organization, if breached. Typical examples include usernames, pwasswords, databases, personally identifiable information (PII), confidential data, and operating systems.</p>
 
-<div class="main">
-  <h2>Critical Asset Identification</h2>
-	<p>Critical assets are any data or systems that cause major impact to an organization, if breached. Typical examples include usernames, pwasswords, databases, personally identifiable information (PII), confidential data, and operating systems.</p>
+<h3>Understanding Critical Assets </h3>
+<p> The major critical assets identified for the aerospace and defense industry are:</p>
 
-	<p><b>Major Critical Assets identified for the Aerospace & Defense industry are:</b></p>
-	<ul>
-		<li>Classified Materials</li><br>
-	  	<li>Intellectual Property</li><br>
-	  	<li>Aircraft Systems (Navigation, Propulsion, Power)</li><br>
-	  	<li>Supply Chain</li><br>
-	    <li>Physical Assets</li><br>
-	</ul>
-
+<button class="accordion">Classified Materials + </button>
+<div class="panel">
+  <ul> 
+      <li>Valuable to the quality of products made, competitive edge, and ensuring warfighters have the best equipment possible</li>
+      <br>
+      <li>Many different people throughout aerospace contracting firms have access to different segments of classified material</li>
+      <br>
+      <li>The U.S. Government (USG) can take away a contractors clearance capability if facilities are not secured properly or classified material is continually mishandled</li>
+      <br>
+      <li>Foreign governments are often looking at different approaches to gathering classified information</li><br>
+  </ul>
 </div>
 
+<button class="accordion">Intellectual Property + </button>
+<div class="panel">
+  <ul> 
+      <li>Unique products are what lead to aerospace firms earning contracts, also ensures USG maintains an advantage over other nations </li>
+      <br>
+      <li>Mostly researchers, developers, and engineers use this material</li>
+      <br>
+      <li>The corporation can lose its competitive advantage over other firms, and lose contracts valuable to further research and success </li>
+      <br>
+      <li>Espionage and theft of IP through espionage, both through physical stealing, by having a person help install malware/trojan horses/key-loggers, or any other means of divulging IP
+</ul>
+</div>
+
+<button class="accordion">Aircraft Systems + </button>
+<div class="panel">
+  <ul> 
+      <li>These systems are highly valued by warfighters, as jets and other flight technologies play a large role in modern militaries </li>
+      <br>
+      <li>Commercial and Military aircraft worldwide use these technologies in flight </li>
+      <br>
+      <li>Compromise of these aircraft systems could cost many plane-goers their lives, and the USG that the firm works for key advantages over other nations</li>
+      <br>
+    </ul>
+</div>
+
+<button class="accordion">Supply Chain + </button>
+<div class="panel">
+  <ul> 
+      <li>The supply chains of aerospace contractors are the vital to ensuring these firms maintain contracts with USG </li>
+      <br>
+      <li>Manufacturing plants are the largest consumers of these widgets that lead in to whatever the firm is contracted to supply </li>
+      <br>
+      <li>With no consistent supply chain, the United States Defense Industrial Base (DIB) would be far behind in supporting a war effort </li>
+      <br>
+      <li> Ensuring that aerospace firms have a steady supply of the widgets they need to supply the products they are supposed to is vital to the DIB</li></ul>
+</div>
+
+<button class="accordion">Physical Infrastructure + </button>
+<div class="panel">
+  <ul> 
+      <li>The infrastructure aerospace firms have allow them to provide critical support to DIB </li>
+      <br>
+      <li>Most of the employees of these companies use some form of the infrastructure provided, and the government can in an emergency as well </li>
+      <br>
+      <li>A breach in physical infrastructure itself may not prove critical but giving malicious actors access to IT/network infrastructure would be a critical failure </li>
+      <br>
+      <li>Since the beginning of time, physical infrastructure is one of the key defenses of governments and businesses</li></ul>
+</div>
+<p>
+
+
 <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
   });
 }
 </script>
 
 </body>
-</html> 
+</html>
