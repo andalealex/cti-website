@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>MIS 562 CTI Project</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -70,21 +68,32 @@ body {
   display: block;
 }
 
-/*Footer details*/
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
   width: 100%;
-  background-color: #111;
-  color: #818181;
-  text-align: center;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
-
 
 <div class="navbar">
   <a href="home.html">Home</a>
@@ -130,44 +139,76 @@ body {
   <a href="aboutus.html">About</a>
 </div>
 
-<div class="main">
-  <h2>CTI Project Website</h2>
-  <p>Throughout the course of this MIS 562 CTI project, the group will be further examining the <b>Aerospace & Defense</b> industry.</p>
- 
-  <p><b>Cyber Threat Intelligence</b>, or CTI, is the systematic process of identifying emerging threats and key actors to enable effective decision making. 
-    <p><b>Characteristics of Good CTI</b></p>
-    <ul>
-      <li>Relevant, timely</li>
-      <li>Actionable</li>
-      <li>Comprehensive</li>
-      <li>Helps organizations forecast and plan for the future</li>
-      <li>Must be created in a systematic, repeatable and efficient manner</li>
+
+<h2> Analytical Approaches Visualizations </h2> 
+<p> The following visualizations were generated from various datasets and tools to provide insight into making informed decisions regarding CTI in the aerospace and defense industry. </p>
+
+<h3> Preliminary Visualizations </h3>
+
+<button class="accordion">Malware Analysis + </button>
+<div class="panel">
+  <ul> 
+      <li>This table created within excel or a powerpoint interface quickly depicts malwares associated to certain APTs, in this case Chinese APTs.</li> 
+      <li>The data used is the historical data from attacks suspected to originate from these different threat groups. <a href="https://content.fireeye.com/apt-41/website-apt-groups"> FireEye</a> provided this data through their deep dives into each known APT.</li> 
+      <li>This visualization adds value in understanding the correlation between certain malware types, styles, and vectors to help prevent and counter further attacks.</li> 
+      <br>
+      <img id="malware" img src="Analysis_pics/malware.png" alt="Malware Analysis" width="500" height="300" class= "responsive">
+      <br>
     </ul>
-  <p>Some examples of <b>Major CTI Companies</b> are FireEye, RSA Firstwatch, Cyveillance, and iSight.</p>
 </div>
 
-<div class="footer">
-  <p>Disclaimer: All content on this site is for educational purposes only.</p>
+<button class="accordion">Event Correlation + </button>
+<div class="panel">
+  <ul> 
+      <li>Using data gathered from <a href="https://otx.alienvault.com/pulse/60aff44e91865ceaac51e473">AlienVault</a>, this Excel visualization looks at a recent attack on Pulse Secure VPN services:</li>
+      <ul>
+        <li>These services are widely used by the Aerospace industry, especially while many people telework consistently.</li>
+        <li>The detected anomalies help CTI analysts discover and understand attacks.</li> 
+        <li>UNC2630’s goal is to maintain long term access to Pulse Secure connections and activities. (<a href="https://www.bleepingcomputer.com/news/security/pulse-secure-vpn-zero-day-used-to-hack-defense-firms-govt-orgs/">Bleeping Computer</a>)</li>
+      </ul>
+      <br>
+      <img id="eventc" img src="Analysis_pics/eventc.png" alt="Event Correlation" width="500" height="300" class= "responsive">
+      <br>
+      </li>
+    </ul>
 </div>
+
+<button class="accordion">Anomaly Detection + </button>
+<div class="panel">
+   <ul> 
+      <li>This data set represents the theoretical login behavior of the individuals that work at a certain facility</li>
+      <li>Data like this, gathered from SIEMs or log files can give CTI analysts a starting point to investigate possibly malicious behavior.
+      </li>
+      <li>Anomaly detection visualizations are helpful because while looking at an increasingly more complex data set, the normal person would have a harder time just spotting an anomaly</li> 
+      <ul>
+        <li>Too many data points to look through quickly</li>
+        <li>Minute changes in multiple variables could signify an anomaly</li>        
+      </ul>
+      <br>
+      <img id="anomaly" img src="Analysis_pics/anomaly.png" alt="Anomaly Detection" width="500" height="300" class= "responsive">
+      <br>
+      </li>
+    </ul>
+</div>
+<p>
+
 
 <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
   });
 }
 </script>
 
-
 </body>
-</html> 
+</html>

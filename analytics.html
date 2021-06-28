@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>MIS 562 CTI Project</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -70,21 +68,32 @@ body {
   display: block;
 }
 
-/*Footer details*/
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
   width: 100%;
-  background-color: #111;
-  color: #818181;
-  text-align: center;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
-
 
 <div class="navbar">
   <a href="home.html">Home</a>
@@ -130,44 +139,112 @@ body {
   <a href="aboutus.html">About</a>
 </div>
 
-<div class="main">
-  <h2>CTI Project Website</h2>
-  <p>Throughout the course of this MIS 562 CTI project, the group will be further examining the <b>Aerospace & Defense</b> industry.</p>
- 
-  <p><b>Cyber Threat Intelligence</b>, or CTI, is the systematic process of identifying emerging threats and key actors to enable effective decision making. 
-    <p><b>Characteristics of Good CTI</b></p>
-    <ul>
-      <li>Relevant, timely</li>
-      <li>Actionable</li>
-      <li>Comprehensive</li>
-      <li>Helps organizations forecast and plan for the future</li>
-      <li>Must be created in a systematic, repeatable and efficient manner</li>
+
+<h2> Analytical Approaches & Justification </h2> 
+<p> The identified analytical approaches selected for the aerospace and defense industry are: Malware Analysis, Event Correlation, and Anomaly Detection. These approaches were selected because they will help organizations within this industry make timely, relevant, and effective decisions considering their cybersecurity posture. </p>
+
+<h3> Analytical Approaches </h3>
+
+<button class="accordion">Malware Analysis + </button>
+<div class="panel">
+  <ul> 
+      <li>Malware analysis was chosen because malware is one of the top threat trends identified within the industry. The aerospace & defense industry’s organizations and individuals are very susceptible to attackers dropping malicious software or files to exploit their network.</li>
+      <br>
+      <li>Value added in creating timely, relevant, and actionable CTI: 
+        <ul>
+          <li>It also dissects malware to understand how it works, how best to identify it, how to eliminate it, and how to prevent it from occurring again.</li>
+          <li>It allows organizations to extract important information and details to enhance their CTI.</li>
+          <li>It can provide detailed information needed to respond to network intrusions (which can explain what happened, where the machines and files are located, and it can also find the signatures for the intrusion detection systems)</li>
+        </ul>
+      </li>
+      <br>
+      <li>Data sources required: malware, capability to view code without compromising systems</li>
+      <br>
+      <li>Tools used for analytics: FireEye </li>
+      <br>
+      <li>Key steps to malware analysis are effective reconstruction of the exploit and correctly identifying the malware used. </li>
+        <ul>
+          <li>The shells and code design are used to understand the threat and the target of the exploit.</li> 
+          <li>Other alternatives to discovering the attacker are to attempt to track the origins of the exploit or to wait for somebody to claim the attack.</li>
+        </ul>
+      </li>
     </ul>
-  <p>Some examples of <b>Major CTI Companies</b> are FireEye, RSA Firstwatch, Cyveillance, and iSight.</p>
 </div>
 
-<div class="footer">
-  <p>Disclaimer: All content on this site is for educational purposes only.</p>
+<button class="accordion">Event Correlation + </button>
+<div class="panel">
+  <ul> 
+      <li>Event Correlation was selected because it analyzes the relationships between events and activities. Within the A&D industry, this is helpful in analyzing threats, such as malware attacks and data breaches.</li>
+      <br>
+      <li>Value added in creating timely, relevant, and actionable CTI: 
+        <ul>
+          <li>It can gain deeper insights into collected data by integrating multiple data sources together.</li>
+          <li>Organizations can also customize rules and alerts to get the most value out of this analytical approach.</li>
+        </ul>
+      </li>
+      <br>
+      <li>Data sources required: server logs/ SIEM</li>
+      <br>
+      <li>Tools used for analytics: AlienVault and FireEye</li>
+      <br>
+      <li>Key steps are understanding the portions of a cyberattack that are recurring and knowing which events are important (ie signal vs. noise).</li>
+        <ul>
+          <li>Evaluation measures have to be taken to understand fidelity of assessments that events, files, etc. are in fact linked.</li>
+          <li>Other approaches for this task are closely related to anomaly detection but understanding that indications and warnings of an impending attack are critical to heed.</li>
+        </ul>
+      </li>
+    </ul>
 </div>
+
+<button class="accordion">Anomaly Detection + </button>
+<div class="panel">
+  <ul> 
+      <li>Anomaly detection was selected because it can detect malicious activity and provide critical and actionable intelligence. Within the A&D industry, this would be especially useful when trying to detect attacks, such as data breaches, malware attacks, and supply chain attacks.</li>
+      <br>
+      <li>Value added in creating timely, relevant, and actionable CTI: 
+        <ul>
+          <li>It can identify any event falling outside of a predefined set of normal behaviors and detect malicious activity.</li>
+          <li>Can be a key indicator for espionage activities from insiders with privileged accesses.</li>
+        </ul>
+      </li>
+      <br>
+      <li>Data sources required: Access logs/SIEM, network monitoring</li>
+      <br>
+      <li>Tools used for analytics: 
+        <ul>
+          <li>Rules set at the system administration level to better understand normal work hours and when a log on is suspicious.</li>
+          <li>Notifications when a user is accessing data outside of the scope of their work</li>
+          <li>Abnormal files and types, encryptions, etc. within logical structure</li>
+        </ul>
+      </li>
+      <br>
+      <li>Key steps are ensuring that a baseline has been established and maintained is vital, because with no baseline, there can be no deviations from a “normal”.
+        <ul>
+          <li>Social engineering can help discover coworkers that are complicit in some cases</li>
+          <li>Alternatives could be using machine learning to understand normal patterns within the system and to stop odd behavior and alert system administrators</li>
+        </ul>
+      </li>
+    </ul>
+</div>
+<p>
+
 
 <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
   });
 }
 </script>
 
-
 </body>
-</html> 
+</html>
