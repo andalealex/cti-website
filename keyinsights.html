@@ -136,7 +136,7 @@ body {
       <a href="visualizations.html">Visualizations</a>
     </div>
   </div> 
-  <a href="keyinsights.html">Key Insights & Intelligence</a>
+  <a href="keyinsights.html">Key Insights & Operational Intelligence</a>
   <a href="aboutus.html">About</a>
 </div>
 
@@ -144,46 +144,77 @@ body {
 <h2> Key Insights & Intelligence </h2> 
 <p> The identified analytical approaches selected for the aerospace and defense industry are: Malware Analysis, Event Correlation, and Anomaly Detection. These approaches were selected because they will help organizations within this industry make timely, relevant, and effective decisions considering their cybersecurity posture. </p>
 
-<button class="accordion">Key Insights and Intelligence + </button>
+<button class="accordion">Updated Key Insights and Intelligence + </button>
 <div class="panel">
-  <p>Based on our analysis, the following is a summary of the key insights and intelligence as it relates to our CTI project:</p>
- 
-  <ul>
-    <li>Key Threats Towards Aerospace & Defense Industry</li>
-    <ul>
-      <li>Malware & Ransomware Attacks</li>
-      <li>Data Breaches</li>
-      <ul>
-        <li>Classified and proprietary information at risk</li>
-        <li>Possibility to lose contracts depending on compromised information</li>
-      </ul>
-    </ul>
+  <p>Based on our analysis, the following is a summary of our updated key insights and intelligence as it relates to our CTI project:</p>
 
-    <li>Key Threat Actors Against Aerospace & Defense Industry</li>
-    <ul>
-      <li>Various APTs specifically target the defense industrial base and aerospace contractors</li>
-      <li>Non-state sponsored attacks are less frequent and less specific data exists on these attacks</li>
-    </ul>
+    <h3><b>Emerging Industry Threats: Increased Social Engineering & Web Compromises</h3></b>
+    <p> Through our analysis, we have identified an increase in social engineering attacks via spear phishing emails and web compromises with the intentions for the adversary (Chinese hacker groups) to obtain classified material, data, and intellectual property. About 45% of the APTs analyzed also indicated that the adversaries attempted strategic web compromises, zero day attacks, and tried taking advantage of newly exposed exploits. Therefore, we must be aware of the hackers combining strategies and utilizing a combination of tools (like SOGU, Gh0st, PHOTO, etc) to achieve their attacks.</p>
 
-    <li>Adversary Infrastructure Used to Conduct Attacks</li>
-    <ul>
-      <li>Key infrastructure is the multi-vector attacks that APTs carry out, starting with gaining access in the simplest way prior to using more sophisticated entry mechanisms</li>
-    </ul>
-    
-    <li>TTP’s of adversaries</li>
-    <ul>
-      <li>Spear phishing to establish a foothold on a network is a critical task for many APT exploits to be effective</li>
-    </ul>
+    <h3><b>Anomalies in Employee Logins</h3></b>
+    <p>Analyzing user logins and log files throughout the span of a typical work day shows that there were some anomalies that appeared early in the day and later in the evening. These instances allow for the identification of and can start the investigation of potential malicious behavior of an adversary, such as a hacker group or insider threats, who are seeking to gain access to or steal IP.</p>
+
+    <h3><b>Emerging Industry Threats: Indicators of Compromise</h3></b>
+    <p>Through event correlation, we analyzed attacks occurring against the Pulse Secure VPN service, which is widely used by the aerospace & defense industry. The primary adversary in this scenario is state sponsored threat actor UNC2630 whose primary goals are to maintain long-term access to networks, collect credentials and steal proprietary data. About 93% of the indicators of compromise were related to File Hashes which indicate that we must focus on these types of IoCs moving forward.</p>
 </div>
 
 <button class="accordion">Operational Intelligence + </button>
 <div class="panel">
-<p> TBD
+    <p>
+    <h3><b>Emerging Industry Threats: Increased Social Engineering & Web Compromises</b></h3>
+    <p><b>Operational Intelligence</b>: Monitor threat actors and associated malware so that organizations can build targeted defenses and awareness around the tools and methods high threat actors use.</p>
+    <p><b> Intelligence Dissemination Strategy & Courses of Action:</b></p>
+    <li>TAXII Threat Feeds (using the Source & Subscriber model to sharing information from the central cybersecurity team or leadership to employees that are affected by social engineering and web compromises)</li>
+    <li>Perform dynamic malware analysis to identify trends and features</li><li>Monitor social engineering threat actors on hacker forums and other open source intelligence platforms</li>
+    <li>Notifying employees accordingly if phishing emails have been identified</li>
+
+<p>
+
+    <h3><b>Anomalies in Employee Logins</b></h3>
+    <p><b>Operational Intelligence</b>: Outliers can be detected through data visualizations</p>
+    <p><b>Intelligence Dissemination Strategy & Courses of Action</b>:</p>
+      <li>This data should be disseminated to the Security Operations Center via email alert so that they can begin to track the behavior and block user login attempts, if necessary</li>
+      <li>Creating dynamic visualizations and real-time analysis in CTI platform that displays employee logins to the network to easily identify anomalies in user behavior </li>
+      <li>Implementing automated alerts to contact an organization when abnormal behavior occurs and blocking user login attempts</li>
+</p>
+<p>
+    <h3><b>Emerging Industry Threats: Indicators of Compromise</b></h3>
+    <p><b>Operational Intelligence</b>: 
+      <p>
+        <li>Intelligence sharing and dissemination will involve open source chat room and data sharing sites, such as AlienVault.</li>
+        <ul>
+          <li>Intelligence internal to the company will be distributed between security personnel</li>
+          <li>Intelligence will not be disseminated until conclusions about malicious activity have been made</li>
+          <li>Anomaly detection will be held internally to ensure information is only held by those who need to know</li>
+          <li>TAXII will allow us to share information with other cybersecurity professionals</li>
+        </ul>
+        <li>Based on the current intelligence the following courses of action are recommended:</li>
+        <ul>
+        <li>Utilize VPNs and Proxy servers to limit IoT facing devices on the network</li>
+        <li>Critical asset protection should be focused on both proprietary and classified information</li></ul>
+      <li>Foreign Government APTs are proving to be a larger threat and are targeting the defense industrial base, the next CTI process will focus on understanding and countering the malware and other techniques these threat actors use.</li>
+</p>
+    <p><b>Intelligence Dissemination Strategy & Courses of Action</b>:</p>
+      <li>Notify infosec professionals & system admins of the indicators of compromise attempts and  malicious activities via automated email alerts so they can respond and act accordingly</li>
+      <p>
 </div>
 
 <button class="accordion">Future CTI Platform Directions + </button>
 <div class="panel">
-<p> TBD
+<p> 
+  <h3><b>Real-Time Dynamic Visualizations</h3></b>
+    <ul>
+      <li>Enabling real-time interactive dashboards and visualizations, like that of malicious attacks occurring within the industry, would allow users to have readily accessible data, filter or cluster the data, and access to details of the threats or attacks on demand. This increases the availability of relevant and timely data, and improves the quality of the data by presenting it in an effective format.</li>
+      <li>Easy to consume intelligence is how change is made at the C level.</li>
+      </ul>
+ <h3><b>Threat Dissemination</h3></b>
+    <ul>
+      <li>Using the TAXII Hub & Spoke model, real-time analysis can be shared broadly and in an automated manner with the aerospace & defense organizations/ partners to improve their awareness on the emerging threats. Integrating historic reporting as well as the real time threats, intelligence can be created and disseminated in relation to relevant threats</li></ul>
+
+  <h3><b>Automated Malware Analysis</h3></b>
+  <ul>
+    <li>Providing this automated malware analysis would be valuable in detecting emerging malware threats/ anomalies on a network and allow organizations to glean intelligence to enhance their CTI and cyber defenses. Updates and analysis would be shared to companies, third parties, and partners via an API.</li></ul>
+
 </div>
 <p>
 
