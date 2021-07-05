@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title>MIS 562 CTI Project</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -70,21 +68,32 @@ body {
   display: block;
 }
 
-/*Footer details*/
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
   width: 100%;
-  background-color: #111;
-  color: #818181;
-  text-align: center;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
 </style>
 </head>
 <body>
-
 
 <div class="navbar">
   <a href="home.html">Home</a>
@@ -132,7 +141,11 @@ body {
 </div>
 
 <div class="main">
-  <h2>Key Insights & Intelligence</h2>
+<h2> Key Insights & Intelligence </h2> 
+<p> The identified analytical approaches selected for the aerospace and defense industry are: Malware Analysis, Event Correlation, and Anomaly Detection. These approaches were selected because they will help organizations within this industry make timely, relevant, and effective decisions considering their cybersecurity posture. </p>
+
+<button class="accordion">Key Insights and Intelligence + </button>
+<div class="panel">
   <p>Based on our analysis, the following is a summary of the key insights and intelligence as it relates to our CTI project:</p>
  
   <ul>
@@ -161,33 +174,36 @@ body {
     <ul>
       <li>Spear phishing to establish a foothold on a network is a critical task for many APT exploits to be effective</li>
     </ul>
-
-
-  
 </div>
 
-<div class="footer">
-  <p>Disclaimer: All content on this site is for educational purposes only.</p>
+<button class="accordion">Operational Intelligence + </button>
+<div class="panel">
+<p> TBD
 </div>
+
+<button class="accordion">Future CTI Platform Directions + </button>
+<div class="panel">
+<p> TBD
+</div>
+<p>
+
 
 <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
+var acc = document.getElementsByClassName("accordion");
 var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  this.classList.toggle("active");
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
   });
 }
 </script>
 
-
 </body>
-</html> 
+</html>
